@@ -1,0 +1,30 @@
+{
+
+  "description": "Let you browse LinkedIn and Facebook without an authorized account - bypass unauthorized access restrictions introduced in 2016Q4",
+  "manifest_version": 2,
+  "name": "linkedin-auth-bypass",
+  "version": "1.0",
+  "homepage_url": "https://github.com/tothi/linkedin-auth-bypass",
+  "icons": {
+    "48": "icons/in-48.png"
+  },
+
+  "applications": {
+    "gecko": {
+      "id": "linkedin-auth-bypass@mozilla.org",
+      "strict_min_version": "45.0"
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.linkedin.com/*"],
+      "js": ["patch-linkedin.js"]
+    },
+    {
+      "matches": ["*://*.facebook.com/*"],
+      "js": ["patch-facebook.js"]
+    }
+  ]
+
+}
